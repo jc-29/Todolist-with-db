@@ -18,16 +18,14 @@ class BaseModel(pw.Model):
         # Check this one out here http://docs.peewee-orm.com/en/latest/peewee/models.html#table-names
         legacy_table_names = False
 
-class User(BaseModel):
+class User_xyz(BaseModel):
     username = pw.CharField(null=False)
-    password = pw.CharField(null = False)
+    password = pw.CharField(null=False)
 
 class Todo_list(BaseModel):
     name = pw.CharField(null=False)
-    # user = pw.ForeignKeyField(User, backref='todo_lists')
+    user = pw.ForeignKeyField(User_xyz, backref='todo_lists', default=1 )
 
-    def __repr__(self):
-        return f'id: {self.id} name:{self.name}'
 
 class Todo_task(BaseModel):
     task = pw.CharField(null = False)

@@ -1,7 +1,6 @@
 import peeweedbevolve
 
 from todolist_with_data import db
-# import models as m
 
 
 if __name__ == '__main__':
